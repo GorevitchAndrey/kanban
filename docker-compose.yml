@@ -1,0 +1,78 @@
+# Maki template version: 1.0
+
+version: '3.2'
+
+networks:
+  shag:
+    external:
+      name: shag
+
+services:
+  frontend:
+    container_name: shag-trello-frontend
+    build:
+      context: .
+      dockerfile: .deploy/docker/frontend/Dockerfile
+    volumes:
+      - ./.deploy/docker/frontend/nginx.conf:/etc/nginx/conf.d/default.conf
+      - .:/app
+    networks:
+      - shag
+    depends_on:
+      - backend
+    ports:
+      - 80:80
+
+  backend:
+    container_name: shag-trello-backend
+    build:
+      context: .
+      dockerfile: .deploy/docker/backend/Dockerfile
+    env_file:
+      - ./.env
+    volumes:
+      - .:/app
+    networks:
+      - shag
+    depends_on:
+      - cache
+
+  cache:
+    container_name: shag-trello-cache
+    image: memcached:1.5-alpine
+    networks:
+      - shag
+
+  db:
+    container_name: shag-trello-db
+    image: mysql:latest
+    volumes:
+      - db_volume:/var/lib/mysql:delegated
+    environment:
+      - MYSQL_DATABASE=${DB_DATABASE}
+      - MYSQL_USER=${DB_USERNAME}
+      - MYSQL_PASSWORD=${DB_PASSWORD}
+      - MYSQL_ROOT_PASSWORD=${DB_PASSWORD}
+    ports:
+      - "${DB_PORT}:3306"
+    networks:
+      - shag
+    restart: unless-stopped
+
+  adminer:
+    container_name: op-adminer
+    image: adminer:4.7.7
+    ports:
+      - 8081:8080
+    links:
+      - db:db
+    environment:
+      ADMINER_DEFAULT_SERVER: 'shag-trello-db'
+      ADMINER_PLUGINS: 'tables-filter sql-log'
+    networks:
+      - shag
+    restart: unless-stopped
+
+volumes:
+  db_volume:
+    driver: local

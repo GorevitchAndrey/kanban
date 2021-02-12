@@ -1,0 +1,375 @@
+body .container .row .columns .column .inputTitleBlock .addTitleToColumn,
+body .container .header .changeBackgroundColor .btnChangeColor,
+body .container .header .showMore {
+  text-decoration: none;
+  outline: none;
+  display: inline-block;
+  color: #7c7c7c;
+  border: 1px solid rgba(255, 255, 255, 0.4);
+  font-weight: 300;
+  font-family: "Montserrat", sans-serif;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  cursor: pointer;
+}
+
+body .container .row .columns .column .inputTitleBlock .addTitleToColumn:before,
+body .container .header .changeBackgroundColor .btnChangeColor:before,
+body .container .header .showMore:before,
+body .container .row .columns .column .inputTitleBlock .addTitleToColumn:after,
+body .container .header .changeBackgroundColor .btnChangeColor:after,
+body .container .header .showMore:after {
+  content: "";
+  position: absolute;
+  width: 0;
+  height: 0;
+  opacity: 0;
+  box-sizing: border-box;
+}
+
+body .container .row .columns .column .inputTitleBlock .addTitleToColumn:before,
+body .container .header .changeBackgroundColor .btnChangeColor:before,
+body .container .header .showMore:before {
+  bottom: 0;
+  left: 0;
+  border-left: 1px solid white;
+  border-top: 1px solid white;
+  transition: 0s ease opacity 0.8s, 0.2s ease width 0.4s, 0.2s ease height 0.6s;
+}
+
+body .container .row .columns .column .inputTitleBlock .addTitleToColumn:after,
+body .container .header .changeBackgroundColor .btnChangeColor:after,
+body .container .header .showMore:after {
+  top: 0;
+  right: 0;
+  border-right: 1px solid white;
+  border-bottom: 1px solid white;
+  transition: 0s ease opacity 0.4s, 0.2s ease width, 0.2s ease height 0.2s;
+}
+
+body .container .row .columns .column .inputTitleBlock .addTitleToColumn:hover:before,
+body .container .header .changeBackgroundColor .btnChangeColor:hover:before,
+body .container .header .showMore:hover:before,
+body .container .row .columns .column .inputTitleBlock .addTitleToColumn:hover:after,
+body .container .header .changeBackgroundColor .btnChangeColor:hover:after,
+body .container .header .showMore:hover:after {
+  height: 100%;
+  width: 100%;
+  opacity: 1;
+}
+
+body .container .row .columns .column .inputTitleBlock .addTitleToColumn:hover:before,
+body .container .header .changeBackgroundColor .btnChangeColor:hover:before,
+body .container .header .showMore:hover:before {
+  transition: 0s ease opacity 0s, 0.2s ease height, 0.2s ease width 0.2s;
+}
+
+body .container .row .columns .column .inputTitleBlock .addTitleToColumn:hover:after,
+body .container .header .changeBackgroundColor .btnChangeColor:hover:after,
+body .container .header .showMore:hover:after {
+  transition: 0s ease opacity 0.4s, 0.2s ease height 0.4s, 0.2s ease width 0.6s;
+}
+
+body .container .row .columns .column .inputTitleBlock .addTitleToColumn:hover,
+body .container .header .changeBackgroundColor .btnChangeColor:hover,
+body .container .header .showMore:hover {
+  background: rgba(255, 255, 255, 0.2);
+}
+
+body .container .row .columns .column .inputTitleBlock .hideTitleToColumn,
+body .container .header .hideMore {
+  text-decoration: none;
+  outline: none;
+  display: inline-block;
+  padding: 3px 10px;
+  position: relative;
+  overflow: hidden;
+  border: 1px solid #fe6637;
+  border-radius: 8px;
+  font-family: "Montserrat", sans-serif;
+  color: #fe6637;
+  transition: 0.2s ease-in-out;
+  cursor: pointer;
+}
+
+body .container .row .columns .column .inputTitleBlock .hideTitleToColumn:before,
+body .container .header .hideMore:before {
+  content: "";
+  background: linear-gradient(90deg, rgba(255, 255, 255, 0.1), rgba(255, 255, 255, 0.5));
+  height: 50px;
+  width: 50px;
+  position: absolute;
+  top: -8px;
+  left: -75px;
+  transform: skewX(-45deg);
+}
+
+body .container .row .columns .column .inputTitleBlock .hideTitleToColumn:hover,
+body .container .header .hideMore:hover {
+  background: #fe6637;
+  color: #fff;
+}
+
+body .container .row .columns .column .inputTitleBlock .hideTitleToColumn:hover:before,
+body .container .header .hideMore:hover:before {
+  left: 150px;
+  transition: 0.5s ease-in-out;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  background-size: cover;
+  background-position: center;
+  font-family: "Noto Sans", sans-serif;
+}
+
+body .container {
+  height: 100vh;
+  padding: 10px;
+  margin: 10px;
+}
+
+body .container .header {
+  display: flex;
+  justify-content: space-between;
+}
+
+body .container .header .about {
+  display: flex;
+}
+
+body .container .header .about .nameBoard {
+  font-size: 14px;
+  font-weight: 400;
+  color: #525252;
+}
+
+body .container .header .about .addUsers {
+  font-size: 14px;
+  font-weight: 400;
+  color: #525252;
+}
+
+body .container .header .logoBoard {
+  background-image: url(https://a.trellocdn.com/prgb/dist/images/header-logo-2x.01ef898811a879595cea.png);
+  background-position: 100% 0;
+  background-repeat: no-repeat;
+  background-size: 80px 30px;
+  cursor: pointer;
+  display: inline-block;
+  height: 30px;
+  width: 80px;
+}
+
+body .container .header .showMore {
+  padding: 20px 30px;
+  margin: 10px 20px;
+  background: none;
+  position: relative;
+}
+
+body .container .header .backgroundBlock {
+  position: absolute;
+  top: 0px;
+  margin-left: 65%;
+}
+
+@media (min-width: 700px) {
+  body .container .header .backgroundBlock {
+    margin-left: 67%;
+  }
+}
+
+@media (min-width: 800px) {
+  body .container .header .backgroundBlock {
+    margin-left: 70%;
+  }
+}
+
+@media (min-width: 900px) {
+  body .container .header .backgroundBlock {
+    margin-left: 74%;
+  }
+}
+
+@media (min-width: 1000px) {
+  body .container .header .backgroundBlock {
+    margin-left: 77%;
+  }
+}
+
+@media (min-width: 1200px) {
+  body .container .header .backgroundBlock {
+    margin-left: 80%;
+  }
+}
+
+@media (min-width: 1300px) {
+  body .container .header .backgroundBlock {
+    margin-left: 82%;
+  }
+}
+
+@media (min-width: 1600px) {
+  body .container .header .backgroundBlock {
+    margin-left: 85%;
+  }
+}
+
+@media (min-width: 1800px) {
+  body .container .header .backgroundBlock {
+    margin-left: 88%;
+  }
+}
+
+body .container .header .hideMore {
+  float: right;
+}
+
+body .container .header .changeBackgroundColor {
+  background: #f1f1f1;
+  width: 200px;
+  margin-left: auto;
+  border-radius: 4px;
+  padding: 8px;
+  display: none;
+  position: relative;
+}
+
+body .container .header .changeBackgroundColor .changeColor {
+  background: border-box;
+  border: 0;
+  cursor: pointer;
+}
+
+body .container .header .changeBackgroundColor .btnChangeColor {
+  padding: 10px 10px;
+  background: none;
+}
+
+body .container .row {
+  display: flex;
+  align-items: flex-start;
+  margin: 50px;
+}
+
+body .container .row .columns {
+  display: flex;
+  align-items: flex-start;
+}
+
+body .container .row .columns .column {
+  margin: 10px;
+  width: 240px;
+  border-radius: 4px;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+  background: #f1f1f1;
+  padding: 10px 15px;
+}
+
+body .container .row .columns .column .inputTitleBlock {
+  display: flex;
+  flex-direction: column;
+}
+
+body .container .row .columns .column .inputTitleBlock .addTitleToColumn {
+  margin-top: 10px;
+  background: none;
+}
+
+body .container .row .columns .column .dragged {
+  opacity: 0.4;
+}
+
+body .container .row .columns .column .under {
+  margin-top: 20px;
+}
+
+body .container .row .columns .column .column-header {
+  text-align: left;
+  font-size: 14px;
+  font-weight: 700;
+  color: #526a7a;
+  margin: 0;
+  margin-bottom: 10px;
+}
+
+body .container .row .columns .column .note {
+  cursor: default;
+  width: 100%;
+  background: white;
+  padding: 10px;
+  border: none;
+  border-radius: 4px;
+  margin-bottom: 8px;
+  box-shadow: 0px 1px 0px 0px #c9cfd4;
+  text-align: left;
+  font-size: 14px;
+  line-height: 1.3;
+  font-weight: 400;
+  color: #526a7a;
+  transition: background-color 0.2s linear;
+}
+
+body .container .row .columns .column .note:hover {
+  background-color: #e3f2fd;
+  cursor: pointer;
+}
+
+body .container .row .columns .column .note:focus {
+  cursor: auto;
+}
+
+body .container .row .columns .column .note textarea {
+  margin: 0;
+}
+
+body .container .row .columns .column .note .dragged {
+  opacity: 0.01;
+}
+
+body .container .row .columns .column .note .under {
+  opacity: 0.5;
+}
+
+body .container .row .columns .column .column-footer span {
+  font-size: 14px;
+  font-weight: 400;
+  color: #525252;
+  margin: 0;
+  cursor: pointer;
+}
+
+body .container .row .action {
+  cursor: pointer;
+}
+
+body .container .adder {
+  margin: 10px;
+  width: 240px;
+  border-radius: 4px;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+  background: rgba(241, 241, 241, 0.5);
+  padding: 0;
+  transition: all 0.2s ease;
+}
+
+body .container .adder:hover {
+  background-color: rgba(227, 242, 253, 0.7);
+}
+
+body .container .adder span {
+  display: block;
+  font-size: 14px;
+  line-height: 1;
+  font-weight: 700;
+  color: #525252;
+  margin: 0;
+  padding: 15px 20px;
+  cursor: pointer;
+}
+
